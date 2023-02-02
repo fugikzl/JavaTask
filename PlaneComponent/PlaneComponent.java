@@ -1,9 +1,16 @@
 package PlaneComponent;
 public abstract class PlaneComponent {
 
-    protected int weight;
-    protected int volume;
-    protected String name;
+    public PlaneComponent(int weight, int volume, String name)
+    {
+        this.name = name;
+        this.weight = weight;
+        this.volume = volume;
+    }
+
+    private int weight;
+    private int volume;
+    private String name;
 
     public int getWeight()
     {
