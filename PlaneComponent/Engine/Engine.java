@@ -1,35 +1,19 @@
 package PlaneComponent.Engine;
 import PlaneComponent.PlaneComponent;
-import java.lang.Math;
 
-public abstract class Engine extends PlaneComponent implements IEngine{
+public class Engine extends PlaneComponent implements IEngine{
     
-    // power in horse power 75kg * (1m/s)^2
-    public double power; 
-
-    public int weight;
-
-    public int volume;
-
-    public String name;
-
-    public double fuelConsumtion;
-
-    public boolean canFly(int weight)
+    public Engine(String name, double power, int weight, int volume)
     {
-        return (Math.sqrt(this.power / weight) < 28);
+        super(weight, volume, name);
+        this.power = power;
     }
+    // power in horse power 75kg * (1m/s)^2
+    private double power; 
 
-    public double getSpeed(int weight)
+    public double getPower()
     {
-        if(this.canFly(weight))
-        {
-            return Math.sqrt(this.power / weight);
-        }
-        else
-        {
-            return 0;
-        }
+        return this.power;
     }
 
 }
