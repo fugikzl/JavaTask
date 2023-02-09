@@ -26,7 +26,7 @@ public class Plane {
 
     public boolean canFly()
     {
-        return (Math.sqrt(this.engine.getPower() / this.getWeight()) * this.getAirResistanceCoefficent() < 28);
+        return (Math.sqrt(this.engine.getPower() / this.getWeight()) * this.getAirResistanceCoefficent() >= 28);
     }
 
     public double getSpeed()
